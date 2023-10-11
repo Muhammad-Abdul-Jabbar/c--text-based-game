@@ -1,0 +1,245 @@
+﻿// See https://aka.ms/new-console-template for more information
+
+
+using System;
+
+namespace RPG
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int enemyhelth = 30;
+            int herohelth = 30;
+            int key = 0;
+            Console.WriteLine("det var et flykrash nettåp du husker ikke mye du ser til høyre og ser moren din ligger der nede død");
+            Console.WriteLine(" du vet ikke hva du skal gjøre vill forsette livet ditt eller vil du ta ditt liv nå?");
+            Console.WriteLine();
+            Console.WriteLine("Interactions: forsette/forsette - død/død");
+            do
+            {
+                string choice1;
+                choice1 = Console.ReadLine()!;
+                if (choice1 == "død" || choice1 == "Død")
+                {
+                    Console.WriteLine("du ser en kniv til høyre dine hender skjelver, men så plutselig ");
+                    Console.WriteLine("du hører noen puste veldig høyt.");
+                    Console.WriteLine("du ser enn liten jente puste veldig. nå er du usikker om du skal forstte og leve eller gjøre jobben ferdig");
+                    Console.WriteLine();
+                    Console.WriteLine("Interactions: hjelpe/Hjelpe -  jobben ferdig/Jobben ferdig");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                }
+
+
+
+                else if (choice1 == "jobben ferdig" || choice1 == "Jobben ferdig")
+                {
+                    Console.WriteLine("du skal drepe deg selv nå. men så plutselig er du i et mørkt rom.");
+                    Console.WriteLine("det ser ut som rommet mitt.");
+                    Console.WriteLine();
+                    Console.WriteLine("Interactions: se rundt/Se rundt, åpne/Åpne, lete/Lete, Items/items");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                }
+
+                else if (choice1 == "hjelpe" || choice1 == "Hjelpe")
+                {
+                    Console.WriteLine("du går og skjekker om noen lever. du begynner og miste håp men du se en liten jente.");
+                    Console.WriteLine("du hjelper hun. etter du har hjupet hun og skal lete etter mat leter dere etter mat");
+                    Console.WriteLine("dere går ut av flyet og det er to veier. Går dere høyre eller venstre");
+                    Console.WriteLine();
+                    Console.WriteLine("Interactions: høyre/Høyre - venstre/venstre");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                }
+
+
+
+
+                else if (choice1 == "forsette" || choice1 == "Forsette")
+                {
+                    Console.WriteLine("du går og skjekker om noen lever. du begynner og miste håp men du ser en liten jente.");
+                    Console.WriteLine("du hjelper hun. etter du har hjupet hun, nå skal dere lete etter mat");
+                    Console.WriteLine("dere går ut av flyet nå hva gjør dere går dere høyre eller venstre");
+                    Console.WriteLine();
+                    Console.WriteLine("Interactions: høyre/Høyre - venstre/venstre");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                }
+
+
+                else if (choice1 == "venstre" || choice1 == "Venstre")
+                {
+                    Console.WriteLine("dere går venstre veien dere, dere ser deler av flye som har falt av");
+                    Console.WriteLine("du blir kjent med den lille jenta, hun kom hit alene fordi hun skulle til en matte konkuranse,");
+                    Console.WriteLine("men familien hadde ikke nokk penger til 2 personer kommer.");
+                    Console.WriteLine();
+                    Console.WriteLine("dere ser en gorilla, jeg vet ikke hva jeg skal gjøre sloss mot den eller ta høyre veien");
+                    Console.WriteLine();
+                    Console.WriteLine("Interactions: sloss/Sloss - høyre/høyre");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                }
+
+
+                else if (choice1 == "høyre" || choice1 == "Høyre")
+                {
+                    Console.WriteLine("dere går høyre veien dere, dere ser deler av flye som har falt av");
+                    Console.WriteLine("du blir kjent med den lille jenta, hun kom hit alene fordi hun skulle til matte konkuranse");
+                    Console.WriteLine("men familien hadde ikke nokk penger til 2 personer.");
+                    Console.WriteLine();
+                    Console.WriteLine("dere ser en løve, jeg vet ikke hva jeg skal gjøre sloss mot den eller ta venstre veien");
+                    Console.WriteLine();
+                    Console.WriteLine("Interactions: sloss/Sloss - venstre/venstre");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                }
+
+
+                else if (choice1 == "sloss" || choice1 == "Sloss")
+                {
+
+
+                    Console.WriteLine("du har " + herohelth + " og dyre har " + enemyhelth + " helth");
+                    Console.WriteLine("skriv attack/Attack for og slå og block/Block for og Block");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+
+                }
+
+
+
+                else if (herohelth > 0 && enemyhelth > 0)
+                {
+
+                  
+
+                   if (choice1 == "attack" || choice1 == "Attack")
+                    {
+
+                        int enemydamege = new Random().Next(1, 5);
+                        Console.WriteLine("ditt liv" + herohelth);
+                        Console.WriteLine("fienden liv" + enemyhelth);
+                        Console.WriteLine();
+
+                        Console.WriteLine("du angrep for 5 skader");
+                        enemyhelth -= 5;
+
+                        Console.WriteLine("fienden angrep for " + enemydamege + " skader");
+                        herohelth -= enemydamege;
+                        Console.WriteLine();
+                        Console.WriteLine("------------------------------------------------------------------------------------");
+
+                      
+
+                        if (herohelth == 0)
+                        {
+                            Console.WriteLine("du tapte");
+                            Console.WriteLine("prøv igjen");
+                        }
+
+
+                        if (enemyhelth == 0)
+                        {
+
+                            Console.WriteLine();
+                            Console.WriteLine("ditt liv " + herohelth);
+                            Console.WriteLine("fienden liv " + enemyhelth);
+                            Console.WriteLine();
+                            Console.WriteLine("du vant");
+                            Console.WriteLine("du og jenta går tilbake med dyre");
+                            Console.WriteLine("men så kastet noen stein på deg");
+                            Console.WriteLine("du lurer på hvor du er det ser ut som rommet ditt");
+                            Console.WriteLine("du ser døra hva gjør du");
+                            Console.WriteLine("Interactions: se rundt/Se rundt, åpne/Åpne, lete/Lete, Items/items");
+                            Console.WriteLine();
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                        }
+
+                    }
+
+                    if (choice1 == "Block" || choice1 == "block")
+                    {
+                        int enemydamege = new Random().Next(1, 5);
+                        Console.WriteLine("ditt liv " + herohelth);
+                        Console.WriteLine("fienden liv " + enemyhelth);
+
+
+                        Console.WriteLine("du blokkerte fiendens angrep");
+                        Console.WriteLine("fienden ville ha delt for " + enemydamege + " skader");
+                        Console.WriteLine();
+                        Console.WriteLine("------------------------------------------------------------------------------------");
+                    }
+                }
+
+               else if (choice1 == "se rundt" || choice1 == "Se rundt")
+                {
+                    Console.WriteLine("du kan ikke se mye fordi det er mørkt.");
+                    Console.WriteLine("hva gjør du?");
+                    Console.WriteLine("Interactions: se rundt/Se rundt, åpne/Åpne, lete/Lete, Items/items");
+                    Console.WriteLine();
+
+                }
+
+                else if (choice1 == "åpne" || choice1 == "Åpne")
+                {
+                    Console.WriteLine("du prøver og åpne døra, det er låst");
+                    Console.WriteLine("hva gjør du?");
+                    Console.WriteLine("Interactions: se rundt/Se rundt, åpne/Åpne, lete/Lete, Items/items");
+                    Console.WriteLine();
+                }
+
+                else if (choice1 == "Items" || choice1 == "items")
+                {
+                    Console.WriteLine("du har {0}", key + " nøkkel");
+                    Console.WriteLine("Interactions: se rundt/Se rundt, åpne/Åpne, lete/Lete, Items/items");
+                }
+
+
+                else if (choice1 == "lete" || choice1 == "Lete")
+                {
+                    Console.WriteLine("Du snubler rundt i mørket, du snubler plutselig. Når du prøver å reise deg finner du en nøkkel");
+                    key++;
+                    Console.WriteLine("hva gjør du?");
+                    Console.WriteLine("Interactions: se rundt/Se rundt, åpne/Åpne, lete/Lete, Items/items");
+                    Console.WriteLine();
+                }
+
+            }
+
+            while (key < 1);
+            do
+            {
+                string choice2;
+                choice2 = Console.ReadLine()!;
+                if (choice2 == "åpne" || choice2 == "Åpne")
+                {
+                    Console.WriteLine("Du famler litt med låsen, men klarer til slutt å låse opp døren");
+                    Console.WriteLine("Du går ut av rommet og befinner deg i huset ditt. " +
+                        "du går ned for å se moren din, det var da du skjønte at alt var en drøm");
+                    Console.WriteLine();
+                    key--;
+
+                }
+
+
+
+                else if (choice2 == "Items" || choice2 == "items")
+                {
+                    Console.WriteLine("You have {0}", key + " key(s)");
+                    Console.WriteLine();
+                }
+
+
+            }
+            while (key == 1);
+
+            Console.WriteLine("End of story");
+            Console.ReadLine();
+        }
+    }
+}
+
+
